@@ -1,0 +1,8 @@
+grant codeBase "file:{{project.dir}}/-" {
+    permission java.io.FilePermission "/tmp/-", "read,write,delete";
+    permission java.io.FilePermission "{{project.dir}}${/}-", "read,write,delete";
+};
+
+grant codeBase "file:{{project.dir}}/-" { 
+    permission java.util.PropertyPermission "java.*", "read";
+};

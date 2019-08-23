@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Console Security Test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../css/jquery-ui/flick/jquery-ui-1.10.3.custom.css" rel="stylesheet"/>
+        <link href="../css/codemirror/codemirror.css" rel="stylesheet"/>
+        <link href="../css/codemirror/theme/eclipse.css" rel="stylesheet"/>
+        <link href="../css/cloud-ide/ide.css" rel="stylesheet"/>
+        <script src="../js/codemirror/codemirror.js"></script>
+        <script src="../js/codemirror/clike.js"></script>
+        <script src="../js/jquery/jquery-1.9.1.js"></script>
+        <script src="../js/jquery-ui/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../js/jquery/jquery.cookie.js"></script>
+        <script src="../js/cloud-ide/jquery.stcurr.ide.js"></script>
+        <script>
+            $(document).ready(function() {
+                var fetchedTabs = [];
+                $.get('code/BasicTest.java', function(data) {
+                    fetchedTabs.push({name: "BasicTest.java", text: data});
+                    $.get('code/Snippet.java', function(data) {
+                        fetchedTabs.push({name: "Snippet.java", text: data});
+                        $.get('code/SecurityTest.java', function(data) {
+                            fetchedTabs.push({name: "SecurityTest.java", text: data});
+                            $(".ide").ide({tabs: fetchedTabs});
+                        });
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>Code Console - Security Tests</div>
+        <hr/>
+        <div class="ide"></div>
+    </body>
+</html>

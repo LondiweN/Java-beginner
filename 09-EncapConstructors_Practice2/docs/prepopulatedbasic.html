@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Console Basic Pre-populated Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../css/jquery-ui/flick/jquery-ui-1.10.3.custom.css" rel="stylesheet"/>
+        <link href="../css/codemirror/codemirror.css" rel="stylesheet"/>
+        <link href="../css/codemirror/theme/eclipse.css" rel="stylesheet"/>
+        <link href="../css/cloud-ide/ide.css" rel="stylesheet"/>
+        <script src="../js/codemirror/codemirror.js"></script>
+        <script src="../js/codemirror/clike.js"></script>
+        <script src="../js/jquery/jquery-1.9.1.js"></script>
+        <script src="../js/jquery-ui/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../js/jquery/jquery.cookie.js"></script>
+        <script src="../js/cloud-ide/jquery.stcurr.ide.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".ide").ide({
+                    tabs: [
+                        {
+                            name: "Example.java",
+                            text: "public class Example {\n" +
+                                    "  public static void main(String[] args) {\n" +
+                                    "    System.out.println(\"Hello World\");\n  }\n}"
+                        }, {
+                            name: "Person.java",
+                            text: "public class Person {\n\n}"
+                        }
+                    ]
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>Code Console Basic Pre-populated Example</div>
+        <p>The editor is placed on the page using &lt;div class="ide"&gt;&lt;/div&gt;. A &lt;script&gt; runs the following JavaScript:</p>
+        <pre>
+$(document).ready(function() {
+    $(".ide").ide({
+        tabs: [
+            {
+                name: "Example.java",
+                text: "public class Example {\n" + 
+                        "  public static void main(String[] args) {\n" +
+                        "    System.out.println(\"Hello World\");\n  }\n}"
+            }, {
+                name: "Person.java",
+                text: "public class Person {\n\n}"
+            }
+        ]
+    });
+});
+        </pre>
+        <p>View the source of this page for the complete listing of CSS and JavaScript files to load.</p>
+        <hr/>
+        <div class="ide"></div>
+    </body>
+</html>

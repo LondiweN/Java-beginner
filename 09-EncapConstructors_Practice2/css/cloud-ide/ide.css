@@ -1,0 +1,108 @@
+.ide {
+    margin: 5px;
+}
+.ide .toolbar {
+    padding: 4px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.ide .toolbar {
+    font-size: 62.5%;
+}
+
+div.ui-dialog {
+    font-size: 75%;
+}
+
+.ide .toolbar .ui-button {
+    padding: 4px 16px;
+}
+
+.ide .fileNames, .ide .outputTab {
+    font-size: 75%;
+}
+
+.ide .outputTab {
+    margin-top: 8px;
+}
+
+/*
+.ide .CodeMirror {
+    height: 300px;
+}
+*/
+
+.ide .CodeMirror, .ide .output {
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.ide .output {
+    font-family: monospace;
+    white-space: pre;
+    /* overflow: scroll; */
+    overflow: auto;
+    height: 200px;
+    padding: 6px;
+}
+
+.ide-new-file-type {
+    width: 500px;
+}
+.ide-new-file-type fieldset {
+    padding: 5px 10px 10px 10px;
+}
+
+.ide-new-file-type fieldset legend {
+    font-weight: bold;
+}
+
+.ide-new-file-type div {
+    overflow: auto;
+    width: 100%
+}
+.ide-new-file-type div.left {
+    float: left;
+    box-sizing: border-box;
+    width: 49%;
+}
+.ide-new-file-type div.right {
+    float: right;
+    box-sizing: border-box;
+    width: 49%;
+}
+.ide-new-file-type select {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.ide-new-file-type p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.ide-new-file-type .page2 label {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.ide-new-file-type .page2 label input {
+    margin-left: 10px;
+    width: 80%;
+}
+
+/* #output is only used in the tutorial version */
+/*
+.auto-size.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+.auto-size .CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+*/

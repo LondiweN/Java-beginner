@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <param-name>jvm-options</param-name>
+        <param-value>-Xmx10M</param-value>
+    </context-param>
+    <context-param>
+        <param-name>policy-file</param-name>
+        <param-value>/WEB-INF/security.policy</param-value>
+    </context-param>
+    <context-param>
+        <param-name>enable-lxc</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>queue-size</param-name>
+        <param-value>1000</param-value>
+    </context-param>
+    <context-param>
+        <param-name>thread-count</param-name>
+        <param-value>100</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>ide.RestApplication</servlet-name>
+        <!-- WEBLOGIC & GLASSFISH 3
+
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.oracle.stcurr.ide.resources.RestApplication</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        -->
+        <!-- GLASSFISH 4
+        -->
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.oracle.stcurr.ide.resources.RestApplication</param-value>
+        </init-param>
+
+        
+        <!--
+        <init-param>
+            <param-name>com.sun.jersey.spi.container.ResourceFilters</param-name>
+            <param-value>com.sun.jersey.api.container.filter.RolesAllowedResourceFilterFactory</param-value>
+        </init-param>
+                <init-param>
+            <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
+            <param-value>com.sun.jersey.api.container.filter.LoggingFilter;com.sun.jersey.oauth.server.api.OAuthServerFilter</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
+            <param-value>com.sun.jersey.api.container.filter.LoggingFilter</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.oauth.ignorePathPattern</param-name>
+            <param-value>requestToken|accessToken</param-value>
+        </init-param>
+        -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ide.RestApplication</servlet-name>
+        <url-pattern>/resources/*</url-pattern>
+    </servlet-mapping>
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+</web-app>
